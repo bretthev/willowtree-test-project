@@ -27,11 +27,16 @@ export default class NameGame extends Component {
     return this.state.willowTreePeople.map((person, index) => <li key={index}>{person.name}</li>)
   }
 
+  displayPicture(i) {
+    return <img src={this.state.willowTreePeople[i].url}/>
+  }
+
   render() {
     return(
       <section className="name-game">
-        <h1>{ this.state.willowTreePeople ? this.displayNames() : null}</h1>
+        { this.state.willowTreePeople.length > 0 ? this.displayPicture(Math.floor(Math.random()*this.state.willowTreePeople.length)) : null }
         <ul>
+          { this.state.willowTreePeople ? this.displayNames() : null}
         </ul>
       </section>
     )
