@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Scoreboard = (stats) => {
-  console.log(stats)
   return (
     <section className="scoreboard">
       <h3 className="correct stats">

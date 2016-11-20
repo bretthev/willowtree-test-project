@@ -50,3 +50,7 @@ body {
   width: 100%;
   transition-duration: .5s;
 }
+
+.scoreboard {
+  background-color: red;
+}
