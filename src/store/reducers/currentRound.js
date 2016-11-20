@@ -8,8 +8,8 @@ const currentRoundChoices = ( state = [], action ) => {
 
 const currentRoundAnswer = ( state = {}, action ) => {
   switch(action.type) {
-    case 'SET_ANSWER':
-      return action.currentRoundAnswer
+    case 'SET_ROUND':
+      return action.answer
     default: return state;
   }
 }

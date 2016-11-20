@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const getWillowTreePeople = () => {
-  console.log('fired')
   return (dispatch) => {
     axios.get('http://api.namegame.willowtreemobile.com/')
     .then((response)=> {
@@ -10,9 +9,6 @@ const getWillowTreePeople = () => {
           response
         })
     })
-    // .catch(()=> {
-    //   console.log('error')
-    // })
   }
 }
 

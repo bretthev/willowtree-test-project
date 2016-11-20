@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          { willowTreePeople ? <NameGame /> : 'Loading WillowTree Name Game'}
+          { willowTreePeople.length > 0 ? <NameGame/> : 'Loading WillowTree Name Game'}
         </div>
       </div>
     );

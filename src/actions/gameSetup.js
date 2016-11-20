@@ -7,26 +7,17 @@ const getRandomFromArray = (array, numberOfItems) => {
 
 
 //actions
-const setCurrentRoundChoices = (willowTreePeople, numberOfItems) => {
+const setupRound = (willowTreePeople, numberOfItems) => {
   const currentRoundChoices = getRandomFromArray(willowTreePeople, numberOfItems)
-  console.log(willowTreePeople, currentRoundChoices)
+  const answer = getRandomFromArray(currentRoundChoices, 1)[0]
   return (dispatch) => {
     dispatch({
       type: 'SET_ROUND',
-      currentRoundChoices
+      currentRoundChoices,
+      answer
     })
   }
 }
 
 
-const setAnswer = (currentRoundArray) => {
-  const currentRoundAnswer = getRandomFromArray(currentRoundArray, 1)
-  return (dispatch) => {
-    dispatch({
-      type: 'SET_ANSWER',
-      currentRoundAnswer
-    })
-  }
-}
-
-module.exports = { setCurrentRoundChoices, setAnswer }
+module.exports = { setupRound }
