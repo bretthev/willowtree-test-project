@@ -12,7 +12,7 @@ const GuessMessage = (lastGuess) => {
       <h2 className="wrong guess-message">{ shuffle(wrongMessages)[0]}</h2>
     :
       <h2 className="correct guess-message">{ shuffle(correctMessages)[0]}</h2>
-      
+
   )
 }
 
