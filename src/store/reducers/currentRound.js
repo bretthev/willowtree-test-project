@@ -14,4 +14,15 @@ const currentRoundAnswer = ( state = {}, action ) => {
   }
 }
 
-module.exports = { currentRoundChoices, currentRoundAnswer }
+const lastGuess = ( state = {}, action ) => {
+  switch(action.type) {
+    case 'UPDATE_SCORE':
+      return action.name
+    case 'SET_ROUND':
+      return null
+    default: return state
+  }
+}
+
+
+module.exports = { currentRoundChoices, currentRoundAnswer, lastGuess }

@@ -5,7 +5,7 @@ const Person = (person) => {
     <article className="person">
       <img
         src={person.url}
-        onClick={e => person.checkGuess(person.name, person.answer, person.stats, person.people)}
+        onClick={e => person.checkGuess(person.name, person.currentRoundAnswer, person.gameStats, person.willowTreePeople)}
         className="picture"
       />
     </article>

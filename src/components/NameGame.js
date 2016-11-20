@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Person from './Person';
-// import GuessMessage from './GuessMessage';
+import Person from '../containers/Person';
+import GuessMessage from './GuessMessage';
 import Scoreboard from './Scoreboard';
 
 export default class NameGame extends Component {
@@ -10,25 +10,26 @@ export default class NameGame extends Component {
   }
 
   displayPictures() {
-    return this.props.currentRoundChoices.map((person, index) => <Person key={index} checkGuess={this.props.checkGuess} answer={this.props.currentRoundAnswer} people={this.props.willowTreePeople} stats={this.props.gameStats} {...person} />)
+    return this.props.currentRoundChoices.map((person, index) => <Person key={index} {...person} />)
   }
 
   render() {
-    const { currentRoundChoices, currentRoundAnswer, gameStats} = this.props
+    const { currentRoundChoices, currentRoundAnswer, gameStats, lastGuess} = this.props
     return(
 
       <section className="name-game">
 
-      <Scoreboard {...gameStats}/>
+        <Scoreboard {...gameStats}/>
 
         <h1 className="main-prompt">
-          {currentRoundAnswer ? currentRoundAnswer.name : null}
+          { currentRoundAnswer.name ? `Who is ${currentRoundAnswer.name}?` : 'Loading, please wait.' }
         </h1>
 
         <section className="picture-container">
           { currentRoundChoices ? this.displayPictures() : null}
         </section>
 
+        { lastGuess ? <GuessMessage lastGuess={lastGuess} answer={currentRoundAnswer} /> : <h2 className="guess-message">Match the name to the face.</h2> }
 
       </section>
     )
