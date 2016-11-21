@@ -6,7 +6,7 @@ const GuessMessage = (props) => {
   const wrongMessages = [`Sorry, that's ${wrongName}.`, `Not quite, that's ${wrongName}.`, `Wrong, that's ${wrongName}.`, `Nope, that's ${wrongName}.`]
   const correctMessages = [`Woooo!`, `Nice job!`, `Nailed it!`, `You got it!`]
 
-  return(
+  return (
 
     props.lastGuess !== props.answer ?
       <h2 className="wrong guess-message">{ shuffle(wrongMessages)[0]}</h2>

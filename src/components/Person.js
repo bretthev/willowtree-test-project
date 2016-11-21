@@ -1,14 +1,15 @@
 import React from 'react';
+import ReverseModePerson from './ReverseModePerson';
+import ClassicPerson from './ClassicPerson';
 
-const Person = (person) => {
+const Person = (props) => {
+  const mode = props.gameMode;
+
   return(
-    <article className="person">
-      <img
-        src={person.url}
-        onClick={e => person.checkGuess(person.name, person.currentRoundAnswer, person.gameStats, person.willowTreePeople)}
-        className="picture"
-      />
-    </article>
+    mode !== 'reverse' ?
+      <ClassicPerson {...props}/>
+      :
+      <ReverseModePerson {...props}/>
   )
 }
 
