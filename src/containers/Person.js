@@ -4,11 +4,12 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
-  const { willowTreePeople, gameStats, currentRoundAnswer } = state;
+  const { willowTreePeople, gameStats, currentRoundAnswer, gameMode } = state;
   return {
     willowTreePeople,
     gameStats,
-    currentRoundAnswer
+    currentRoundAnswer,
+    gameMode
   }
 }
 

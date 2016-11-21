@@ -1,8 +1,6 @@
-const gameMode = ( state = {}, action ) => {
+const gameMode = ( state = 'classic', action ) => {
   switch(action.type) {
-    case 'STANDARD_MODE':
-      return action.mode
-    case 'REVERSE_MODE':
+    case 'CHANGE_GAME_MODE':
       return action.mode
     default: return state;
   };
